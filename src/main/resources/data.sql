@@ -1,0 +1,2 @@
+DELETE FROM tokens;
+INSERT INTO tokens(token) VALUES (28738498);
