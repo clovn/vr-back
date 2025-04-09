@@ -1,2 +1,2 @@
 DELETE FROM tokens;
-INSERT INTO tokens(token) VALUES (28738498);
+INSERT INTO tokens(token, activation_count) VALUES (28738498, 2);

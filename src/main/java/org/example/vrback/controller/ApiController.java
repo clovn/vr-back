@@ -23,6 +23,11 @@ public class ApiController {
 
     @PostMapping("/check/{token}")
     public ResponseEntity<Boolean> checkToken(@PathVariable int token) {
-        return ResponseEntity.ok(tokenRepository.existsByToken(token));
+        boolean isExists = tokenRepository.existsByToken(token);
+        if(isExists) {
+            tokenRepository.decrementActivationCount(token);
+        }
+
+        return ResponseEntity.ok(isExists);
     }
 }
