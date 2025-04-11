@@ -16,4 +16,5 @@ public class Token {
     @Id
     private int id;
     private int token;
+    private int activationCount;
 }

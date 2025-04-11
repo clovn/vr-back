@@ -22,12 +22,11 @@ public class SecurityConfig {
                         .anyRequest().permitAll()
                 )
                 .formLogin(form -> form
-                        .loginPage("/login")
                         .permitAll()
+                        .defaultSuccessUrl("/", true)
                 )
                 .logout(LogoutConfigurer::permitAll
-                )
-                .csrf().disable();
+                );
 
         return http.build();
     }
